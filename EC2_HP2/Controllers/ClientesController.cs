@@ -19,7 +19,7 @@ namespace EC2_HP2.Controllers
         {
             _context = context;
         }
-
+        // localhost:5152/api/clientes/buscar/87006329 
         [HttpGet("buscar/{dni}")]
         public IActionResult BuscarPorDni(string dni)
         {
