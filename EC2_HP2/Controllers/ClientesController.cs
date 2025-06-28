@@ -20,6 +20,13 @@ namespace EC2_HP2.Controllers
             _context = context;
         }
 
+        [HttpGet("buscar/{dni}")]
+        public IActionResult BuscarPorDni(string dni)
+        {
+            bool existe = _context.Clientes.Any(c => c.Documento == dni);
+            return Ok(new { response = existe });
+        }
+
         // GET: api/Clientes
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Cliente>>> GetClientes()
